@@ -4,10 +4,29 @@ volumes:
     driver: "local"
 services:
   jenkins:
-    image: "jenkinsci/jenkins:2.8"
+    image: unlimitedfocus/rails-practice-jenkins
+    # build:
+      # context: ./containers
+      # dockerfile: Dockerfile.jenkins
     ports:
       - '8080:8080'
       - '50000:50000'
     restart: "always"
     volumes:
       - 'data-jenkins:/var/jenkins_home'
+
+  ngrok:
+    image: gtriggiano/ngrok-tunnel
+    environment:
+      - TARGET_HOST=local.app
+      - TARGET_PORT=3000
+      - NGROK_REGION=ap
+    ports:
+      - '4040:4040'
+    networks:
+      - dockernet
+
+# docker network create --driver=bridge --subnet=172.20.0.0/16 --gateway=172.20.0.1 dockernet
+networks:
+  dockernet:
+    external: true
