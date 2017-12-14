@@ -20,5 +20,8 @@ Things you may want to cover:
 * Services (job queues, cache servers, search engines, etc.)
 
 * Deployment instructions
+- `docker-compose up -d jenkins`
+- copy generated password from `docker-compose logs jenkins`
+- create user
 
 * ...
