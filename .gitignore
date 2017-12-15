@@ -59,3 +59,6 @@ bower.json
 
 /node_modules
 /yarn-error.log
+
+# Ignore code coverage reports
+/coverage

@@ -43,6 +43,10 @@ group :development, :test do
 
   gem 'rubocop'
   gem 'rubocop-checkstyle_formatter', require: false
+  gem 'ci_reporter_minitest'
+  gem 'simplecov', require: false
+  gem 'simplecov-json', require: false
+  gem 'simplecov-rcov', require: false
 end
 
 group :development do
